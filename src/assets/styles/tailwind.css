@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-front font-poppins scroll-smooth selection:bg-secondary selection:bg-opacity-70;
+  }
+
+  body {
+    @apply m-0 p-0;
+  }
+
+  img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+@layer utilities {
+  .p-page {
+    @apply px-[6vw];
+  }
+
+  .absolute-cover {
+    @apply absolute w-full h-full top-0 left-0;
+  }
+
+  .heading {
+    @apply font-lato text-3xl font-semibold;
+  }
+}
+
+@layer components {
+  .btn-1 {
+    @apply bg-primary rounded text-back py-2 px-6 cursor-pointer duration-300 hover:scale-105 hover:-translate-y-[2px] hover:shadow-lg;
+  }
+}

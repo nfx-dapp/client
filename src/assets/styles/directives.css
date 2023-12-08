@@ -1,0 +1,20 @@
+@property --property-name {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #c0ffee;
+}
+
+@keyframes demo-live-icon {
+  from {
+    opacity: 100%;
+    scale: 100%;
+  }
+  40% {
+    opacity: 0;
+    scale: 250%;
+  }
+  to {
+    opacity: 0;
+    scale: 200%;
+  }
+}
