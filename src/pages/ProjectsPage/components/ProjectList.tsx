@@ -62,7 +62,7 @@ export default function ProjectList() {
     },
   ];
   return (
-    <section className="p-page py-[12vh] min-h-screen mt-[3.8vh] mb-[15vh]">
+    <section className="p-page pt-[12vh] min-h-screen mt-[3.8vh] mb-[6vh]">
       <div className="flex flex-wrap justify-between gap-y-28">
         {dummy.map((item) => (
           <div className="w-[30%] rounded-xl h-[30vh] flex flex-col items-center relative hover:cursor-pointer p-1 border border-primary group">
