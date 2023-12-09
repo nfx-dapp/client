@@ -89,3 +89,34 @@ export function splitArrayThirds<T>(arr: T[]): [T[], T[], T[]] {
 
   return [part1, part2, part3];
 }
+
+export function purifyJson(impureJson: string) {
+  const pureJson = impureJson
+    // Replace ":" with "@colon@" if it's between double-quotes
+    .replace(/:\s*"([^"]*)"/g, function (match, p1) {
+      return ': "' + p1.replace(/:/g, "@colon@") + '"';
+    })
+
+    // Replace ":" with "@colon@" if it's between single-quotes
+    .replace(/:\s*'([^']*)'/g, function (match, p1) {
+      return ': "' + p1.replace(/:/g, "@colon@") + '"';
+    })
+
+    // Add double-quotes around any tokens before the remaining ":"
+    .replace(/(['"])?([a-z0-9A-Z_]+)(['"])?\s*:/g, '"$2": ')
+
+    // Turn "@colon@" back into ":"
+    .replace(/@colon@/g, ":")
+
+    // Remove leading and trailing whitespaces
+    .trim();
+  return pureJson;
+}
+
+export function deepCopy<T>(source: T) {
+  return JSON.parse(JSON.stringify(source)) as T;
+}
+
+export function equateObjects(a: object, b: object) {
+  return JSON.stringify(a) === JSON.stringify(b);
+}

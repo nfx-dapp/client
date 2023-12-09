@@ -3,6 +3,7 @@ import DataForm from "../../../common/DataForm";
 import Dropdown from "../../../common/Dropdown";
 import ModalNewProject from "./ModalNewProject";
 import useModal from "../../../hooks/useModal";
+import SchemaDescription from "./SchemaDescription";
 
 export default function FormAddNft() {
   const [position, setPosition] = useState(0);
@@ -25,15 +26,13 @@ function BasicInfo(props: {
   function submitHandler(data: Record<string, string>) {
     let h = JSON.parse(JSON.stringify(data));
 
-    // console.log(h);
-
     const reader = new FileReader();
-    // reader.onload = (event) => console.log(event.target.result); // desired file content
-    reader.readAsText(data["abi"][0] as any); // you could also read images and other binaries
+    reader.readAsText(data["abi"][0] as any);
 
-    reader.onload = (event) => (h.abi = event.target?.result);
+    reader.onload = (event) =>
+      (h.abi = JSON.stringify(JSON.parse(event.target?.result as string)));
 
-    // props.setPosition((p) => p + 1);
+    props.setPosition((p) => p + 1);
   }
 
   return (
@@ -137,5 +136,9 @@ function BasicInfo(props: {
 function MetaData(props: {
   setPosition: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  return <section></section>;
+  return (
+    <section className="h-screen flex flex-col justify-end py-8">
+      <SchemaDescription />
+    </section>
+  );
 }

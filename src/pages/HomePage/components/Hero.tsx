@@ -43,7 +43,7 @@ export default function Hero() {
                   <DataForm.Input
                     name="query"
                     className="bg-transparent border-back border py-1 px-2 rounded-inherit text-lg placeholder:text-back placeholder:text-opacity-80 placeholder:text-base w-full"
-                    placeholder="Enter NFT Name, ID or contract Address to search"
+                    placeholder="Enter NFT / Project Name, contract Address to search"
                   />
 
                   <div className="absolute-cover bg-primary rounded-inherit bg-opacity-50 opacity-40 backdrop-blur-sm animate-pulse pointer-events-none" />
