@@ -70,7 +70,7 @@ export default function SchemaDescription(props: {
             <div className="py-5 flex justify-center">
               <div className="relative">
                 <button
-                  className="btn-3 px-6 py-2 rounded-lg bg-green-400 text-black disabled:opacity-50 disabled:pointer-events-none"
+                  className="btn-3 px-6 py-2 rounded-lg bg-green-400 text-black disabled:bg-red-500 disabled:text-white disabled:opacity-50 disabled:pointer-events-none"
                   disabled={!result.valid}
                   onClick={() => props.nextEvent({ schema: schema || "[]" })}
                 >

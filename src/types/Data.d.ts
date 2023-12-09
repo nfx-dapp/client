@@ -25,3 +25,20 @@ export type Definition = {
 }[];
 
 export type Type = "string" | "number" | "reference" | Definition;
+
+interface ABIParameter {
+  name: string;
+  type: string;
+}
+
+interface ABIEntry {
+  constant?: boolean;
+  inputs: ABIParameter[];
+  name: string;
+  outputs: ABIParameter[];
+  payable?: boolean;
+  stateMutability?: "pure" | "view" | "nonpayable" | "payable";
+  type: string;
+}
+
+type ABI = ABIEntry[];

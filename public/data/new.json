@@ -173,7 +173,9 @@
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
     ],
     "name": "getApproved",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [
+      { "internalType": "address", "name": "address", "type": "address" }
+    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
@@ -196,7 +198,7 @@
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
     ],
     "name": "ownerOf",
-    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "outputs": [{ "internalType": "address", "name": "", "type": "bool" }],
     "payable": false,
     "stateMutability": "view",
     "type": "function"

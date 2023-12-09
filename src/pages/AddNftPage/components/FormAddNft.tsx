@@ -4,13 +4,17 @@ import Dropdown from "../../../common/Dropdown";
 import ModalNewProject from "./ModalNewProject";
 import useModal from "../../../hooks/useModal";
 import SchemaDescription from "./SchemaDescription";
+import { ABI } from "../../../types/Data";
+import OutputFieldItem from "./OutputFieldItem";
 
 export default function FormAddNft() {
   const [position, setPosition] = useState(0);
+  const [abi, setAbi] = useState<ABI>([]);
 
   const pages = [
-    <BasicInfo setPosition={setPosition} />,
+    <BasicInfo setPosition={setPosition} setAbi={setAbi} />,
     <MetaData setPosition={setPosition} />,
+    <OutputFields setPosition={setPosition} abi={abi} />,
   ];
 
   return <>{pages[position]}</>;
@@ -18,6 +22,7 @@ export default function FormAddNft() {
 
 function BasicInfo(props: {
   setPosition: React.Dispatch<React.SetStateAction<number>>;
+  setAbi: React.Dispatch<React.SetStateAction<ABI>>;
 }) {
   const projects = ["Fratelli", "Project X", "Walk o prison"];
 
@@ -29,8 +34,10 @@ function BasicInfo(props: {
     const reader = new FileReader();
     reader.readAsText(data["abi"][0] as any);
 
-    reader.onload = (event) =>
-      (h.abi = JSON.stringify(JSON.parse(event.target?.result as string)));
+    reader.onload = (event) => {
+      h.abi = JSON.stringify(JSON.parse(event.target?.result as string));
+      props.setAbi(JSON.parse(h.abi));
+    };
 
     props.setPosition((p) => p + 1);
   }
@@ -137,8 +144,46 @@ function MetaData(props: {
   setPosition: React.Dispatch<React.SetStateAction<number>>;
 }) {
   return (
-    <section className="h-screen flex flex-col justify-end py-8">
-      <SchemaDescription nextEvent={(data) => {}} />
+    <section className="h-screen flex flex-col justify-end py-8 p-page">
+      <SchemaDescription
+        nextEvent={(data) => {
+          props.setPosition((p) => p + 1);
+        }}
+      />
+    </section>
+  );
+}
+
+function OutputFields(props: {
+  setPosition: React.Dispatch<React.SetStateAction<number>>;
+  abi: ABI;
+}) {
+  const fields = props.abi.filter(
+    (abi) =>
+      (abi.stateMutability === "pure" || abi.stateMutability === "view") &&
+      abi.inputs.length === 1 &&
+      abi.inputs[0].type === "uint256" &&
+      abi.outputs.length > 0
+  );
+
+  return (
+    <section className="min-h-screen p-page py-[18vh] flex flex-col">
+      <div className="flex flex-col items-center gap-y-5">
+        <h1 className="font-medium font-inter text-4xl text-transparent bg-clip-text bg-gradient-to-br from-secondary to-primary">
+          Describe your output fields
+        </h1>
+        <p className="text-inter font-light text-center">
+          Select the checkbox besides the fields you would want to include in
+          your NFX explorer <br /> and describe how the output by NFX api should
+          be
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-y-8 pt-20">
+        {fields.map((field, key) => (
+          <OutputFieldItem key={key} field={field} />
+        ))}
+      </div>
     </section>
   );
 }
