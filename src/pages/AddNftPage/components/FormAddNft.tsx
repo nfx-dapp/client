@@ -22,6 +22,20 @@ function BasicInfo(props: {
 
   const modal = useModal();
 
+  function submitHandler(data: Record<string, string>) {
+    let h = JSON.parse(JSON.stringify(data));
+
+    // console.log(h);
+
+    const reader = new FileReader();
+    // reader.onload = (event) => console.log(event.target.result); // desired file content
+    reader.readAsText(data["abi"][0] as any); // you could also read images and other binaries
+
+    reader.onload = (event) => (h.abi = event.target?.result);
+
+    // props.setPosition((p) => p + 1);
+  }
+
   return (
     <section className="h-screen p-page pt-[18vh]">
       <h2 className="text-transparent bg-gradient-to-r from-front via-primary to-secondary bg-clip-text">
@@ -33,10 +47,7 @@ function BasicInfo(props: {
 
       <DataForm.Container
         className="flex flex-col gap-y-10 my-20 min-h-[60vh] p-10 rounded-3xl bg-secondary bg-opacity-20 relative"
-        onSubmit={(data) => {
-          console.log(data);
-          props.setPosition((p) => p + 1);
-        }}
+        onSubmit={submitHandler}
       >
         {/* <div className="absolute right-0 top-0 h-full w-full bg-cover bg-[url('/images/abstract-1.jpg')] -z-1" /> */}
 

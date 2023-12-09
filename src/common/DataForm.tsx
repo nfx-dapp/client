@@ -56,7 +56,7 @@ function MappedInputs(props: {
               onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
                 props.setData((p) => ({
                   ...p,
-                  [child.props.name]: event.target.value,
+                  [child.props.name]: event.target.files || event.target.value,
                 }));
               },
             });
