@@ -76,7 +76,7 @@ export default function Navbar() {
         >
           <Link
             to="/add-nft"
-            className="bg-primary text-back px-6 py-2 rounded-full bg-grid shadow-[inset_5px_4px_1rem_#ffffff77,0px_0px_6px_#ffffff66] duration-300 hover:bg-right-bottom hover:scale-110"
+            className="bg-primary text-back px-6 py-2 rounded-full bg-grid shadow-[inset_5px_4px_1rem_#ffffff77,0px_0px_6px_#ffffff66] duration-300 hover:bg-right-bottom hover:scale-110 font-medium"
           >
             Start Developing
           </Link>

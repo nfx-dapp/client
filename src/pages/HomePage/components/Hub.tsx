@@ -44,7 +44,7 @@ export default function Hub() {
             <h2 className="font-bold text-2xl">{item.title}</h2>
             <h5 className="text-base">{item.description}</h5>
 
-            <div className="z-10 absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl aspect-square h-24 opacity-60 rounded-full bg-gradient-to-br from-primary to-secondary" />
+            {/* <div className="z-10 absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-3xl aspect-square h-24 opacity-60 rounded-full bg-gradient-to-br from-cyan-500 to-pink-500" /> */}
           </div>
         ))}
       </div>

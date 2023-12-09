@@ -33,7 +33,7 @@ function MappedInputs(props: {
     React.Children.forEach(props.children, (child) => {
       if (
         React.isValidElement(child) &&
-        child.type === Input &&
+        (child.type === Input || child.type === Textarea) &&
         child.props.type !== "submit" &&
         child.props.name
       ) {
@@ -94,10 +94,24 @@ type InputProps =
 
 type InputAttributes = React.InputHTMLAttributes<HTMLInputElement>;
 
-function Input(props: InputProps & Partial<Omit<InputAttributes, "name">>) {
+function Input(
+  props: InputProps & Partial<Omit<InputAttributes, "name" | "type">>
+) {
   return <input {...props} />;
 }
 
-const DataForm = { Container, Input };
+type TextareaProps = {
+  name: string;
+};
+
+type TextAreaAttributes = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+
+function Textarea(
+  props: TextareaProps & Partial<Omit<TextAreaAttributes, "name">>
+) {
+  return <textarea {...props} />;
+}
+
+const DataForm = { Container, Input, Textarea };
 
 export default DataForm;
