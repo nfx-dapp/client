@@ -138,7 +138,7 @@ function MetaData(props: {
 }) {
   return (
     <section className="h-screen flex flex-col justify-end py-8">
-      <SchemaDescription />
+      <SchemaDescription nextEvent={(data) => {}} />
     </section>
   );
 }

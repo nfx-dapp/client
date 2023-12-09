@@ -31,7 +31,7 @@ export default function ModalNewProject() {
           maxLength={64}
         />
         <DataForm.Textarea
-          name="name"
+          name="description"
           className="bg-transparent border px-2 py-1 rounded-md h-32"
           placeholder="Describe your project in a few words (500 max)"
           maxLength={500}
