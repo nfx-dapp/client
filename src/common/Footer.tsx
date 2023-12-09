@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-transparent to-back flex justify-center pt-10 flex-col p-page">
+    <footer className="bg-gradient-to-b from-transparent to-back flex justify-center py-10 flex-col p-page">
       <div className="flex flex-col gap-y-3">
         <div className="text-primary text-4xl">Explore NFTs</div>
         <div className="w-[45%] text-sm">
@@ -50,7 +50,7 @@ export default function Footer() {
       </div>
       <figure className="border-2 border-primary border-opacity-20 my-8" />
       <div className="flex mt-8 justify-between">
-        <div className="flex justify-between w-[35%] ">
+        <div className="flex justify-between w-[40%]">
           {dummy.map((category) => (
             <div className="flex flex-col gap-y-4">
               <div>{category.title}</div>
@@ -63,20 +63,28 @@ export default function Footer() {
           ))}
         </div>
         <div className="w-[40%] flex flex-col items-end gap-y-6">
-          <img src="/logo.svg" className="w-[35%]" />
+          {/* <img src="/logo.svg" className="w-[35%]" /> */}
+          <img
+            src="/logo.svg"
+            alt="Footer-logo"
+            className="h-[18vh]  brightness-0 invert opacity-[16%] self-end"
+          />
           <div className="flex gap-x-2 w-full justify-end">
             {socials.map((social) => (
-              <img src={social.link} className="rounded-full aspect-square border-primary border-2 w-[9%] p-2 border-opacity-25"/>
+              <img
+                src={social.link}
+                className="rounded-full aspect-square border-primary border-2 w-[9%] p-2 border-opacity-25"
+              />
             ))}
           </div>
         </div>
       </div>
 
-      <img
+      {/* <img
         src="/logo.svg"
         alt="Footer-logo"
         className="h-[35vh]  brightness-0 invert opacity-[16%] self-end"
-      />
+      /> */}
     </footer>
   );
 }
