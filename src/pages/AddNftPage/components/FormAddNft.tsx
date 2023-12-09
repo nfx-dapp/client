@@ -197,6 +197,10 @@ function OutputFields(props: {
           <OutputFieldItem key={key} field={field} />
         ))}
       </div>
+
+      <button className="bg-primary w-max px-6 py-2 mt-10 self-center text-back rounded-lg duration-300 text-lg hover:bg-secondary">
+        Submit
+      </button>
     </section>
   );
 }
