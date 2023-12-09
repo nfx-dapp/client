@@ -9,7 +9,7 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="h-screen py-[12vh] p-page relative">
+    <section className="h-screen py-[12vh] p-page relative select-none">
       <div className="absolute rounded-3xl overflow-hidden duration-300 group">
         <video
           src="/videos/home-bg.webm"
@@ -77,7 +77,7 @@ export default function Hero() {
                   className="bg-background text-front px-8 py-4 mt-5 rounded-full text-sm font-medium tracking-tight overflow-hidden relative after:absolute-cover after:bg-secondary
                 after:bg-opacity-0 after:duration-300 hover:after:bg-opacity-20"
                 >
-                  Support your NFT
+                  Support your NFTs
                 </Link>
               </div>
             </div>

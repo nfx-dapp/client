@@ -16,7 +16,7 @@ export default function OutputFieldItem(props: OutputFieldItemProps) {
       className={twMerge(
         "p-5 rounded-lg",
         included &&
-          "bg-secondary bg-opacity-10 border border-primary border-opacity-30"
+          "bg-secondary bg-opacity-10 border border-primary border-opacity-30 mb-8"
       )}
     >
       <button

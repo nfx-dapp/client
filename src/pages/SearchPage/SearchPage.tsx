@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import Icon from "../../common/Icon";
 import { useEffect, useState } from "react";
 import Dropdown from "../../common/Dropdown";
+import { formatEthereumAddress } from "../../utils";
 
 const types = ["NFT-contracts", "Projects"];
 
@@ -133,7 +134,12 @@ export default function SearchPage() {
                   </div>
                   <div className="flex flex-col gap-y-1 pt-1">
                     <div className="text-xl font-bold font-inter mb-2">
-                      {item.name}
+                      {item.name}{" "}
+                      <span className="text-xs font-light pl-3 text-secondary">
+                        {formatEthereumAddress(
+                          "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+                        )}
+                      </span>
                     </div>
                     <div className="text-sm">
                       <span className="text-primary">Project :</span>

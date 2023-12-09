@@ -6,6 +6,7 @@ import useModal from "../../../hooks/useModal";
 import SchemaDescription from "./SchemaDescription";
 import { ABI } from "../../../types/Data";
 import OutputFieldItem from "./OutputFieldItem";
+import { Link } from "react-router-dom";
 
 export default function FormAddNft() {
   const [position, setPosition] = useState(0);
@@ -144,7 +145,19 @@ function MetaData(props: {
   setPosition: React.Dispatch<React.SetStateAction<number>>;
 }) {
   return (
-    <section className="h-screen flex flex-col justify-end py-8 p-page">
+    <section className="flex flex-col justify-end p-page mb-[10vh]">
+      <div className="pt-[15vh] pb-10">
+        <h1 className="text-center">
+          Describe the schema of your NFT's Metadata
+          <Link
+            to="/docs/metadata"
+            className="text-sm text-primary pl-2 underline hover:no-underline"
+          >
+            Read Docs for help
+          </Link>
+        </h1>
+      </div>
+
       <SchemaDescription
         nextEvent={(data) => {
           props.setPosition((p) => p + 1);
@@ -179,7 +192,7 @@ function OutputFields(props: {
         </p>
       </div>
 
-      <div className="flex flex-col gap-y-8 pt-20">
+      <div className="flex flex-col pt-20">
         {fields.map((field, key) => (
           <OutputFieldItem key={key} field={field} />
         ))}

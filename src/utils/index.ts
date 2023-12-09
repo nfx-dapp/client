@@ -120,3 +120,21 @@ export function deepCopy<T>(source: T) {
 export function equateObjects(a: object, b: object) {
   return JSON.stringify(a) === JSON.stringify(b);
 }
+
+export function formatEthereumAddress(
+  address: string,
+  charsToShow: number = 6
+): string {
+  if (!/^(0x)?[0-9a-fA-F]{40}$/.test(address)) {
+    throw new Error("Invalid Ethereum address format");
+  }
+
+  const formattedAddress = address.startsWith("0x") ? address : `0x${address}`;
+
+  const truncatedAddress = `${formattedAddress.slice(
+    0,
+    charsToShow + 2
+  )}...${formattedAddress.slice(-charsToShow)}`;
+
+  return truncatedAddress;
+}

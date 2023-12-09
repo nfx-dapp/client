@@ -61,6 +61,7 @@ export default function ProjectList() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
   ];
+
   return (
     <section className="p-page pt-[12vh] min-h-screen mt-[3.8vh] mb-[6vh]">
       <div className="flex flex-wrap justify-between gap-y-28">
@@ -69,7 +70,7 @@ export default function ProjectList() {
             <img
               src={item.imageUrl}
               alt={item.name}
-              className="object-cover w-[100%] h-[100%] rounded-xl saturate-[50%] group-hover:saturate-100 duration-300 ease-in"
+              className="object-cover w-[100%] h-[100%] rounded-xl saturate-[75%] group-hover:saturate-150 duration-300 ease-in"
             />
             <div className="bg-black border border-primary absolute -bottom-12 w-[90%] group-hover:scale-100 duration-300 ease-in scale-90  py-6 rounded-2xl px-6 flex flex-col gap-y-1">
               <div className="flex flex-row items-center justify-between">
