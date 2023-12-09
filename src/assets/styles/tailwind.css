@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-background text-front font-poppins scroll-smooth selection:bg-secondary selection:bg-opacity-70;
+    @apply bg-background text-front font-poppins scroll-smooth selection:bg-secondary selection:bg-opacity-80 selection:bg-blend-difference;
   }
 
   body {

@@ -9,7 +9,7 @@ interface ContainerProps {
 //Form implementation by @marsian83 (https://github.com/marsian83)
 function Container(
   props: ContainerProps &
-    Omit<React.FormHTMLAttributes<HTMLFormElement>, "onSubmit">
+    Omit<React.FormHTMLAttributes<HTMLFormElement>, "onSubmit" | "onChange">
 ) {
   const [data, setData] = useState<Record<string, string>>({});
 

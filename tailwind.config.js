@@ -13,7 +13,7 @@ export default {
         background: "#000000",
         foreground: "#cc3937",
         front: "#ffffff",
-        back: "#1a1a1a",
+        back: "#000000",
       },
       borderRadius: {
         inherit: "inherit",
@@ -25,6 +25,7 @@ export default {
         poppins: '"Poppins", sans-serif',
         raleway: '"Raleway", sans-serif',
         lato: '"Lato", sans-serif',
+        inter: '"Inter", sans-serif',
       },
       zIndex: {
         1: 1,

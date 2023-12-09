@@ -28,9 +28,9 @@ export default function Navbar() {
             // config.colorCycle && "homepage-color-cycle"
           )}
         >
-          <Link to="/" className="duration-300 group">
+          <Link to="/" className="duration-300 group px-1">
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="NFX logo"
               className="aspect-square h-16 duration-inherit group-hover:-scale-y-100"
             />
