@@ -14,8 +14,9 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout.Default />}>
       <Route index element={<HomePage />} />
       <Route path="/add-nft" element={<AddNftPage />} />
-      <Route path="*" element={<ErrorPage />} />
       <Route path="/search" element={<SearchPage />} />
+
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );

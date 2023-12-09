@@ -1,3 +1,5 @@
+import { useSearchParams } from "react-router-dom";
+
 export default function SearchPage() {
   const dummy = [
     {
@@ -49,10 +51,23 @@ export default function SearchPage() {
       owner: "Vo toh me hu",
     },
   ];
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
   return (
-    <div className="p-page py-[12vh] flex flex-col">
-      <div className="text-2xl border-b-2 border-b-primary pb-2 w-full border-opacity-[30%]">
-        Search Results
+    <div className="p-page py-[15vh] flex flex-col">
+      <div className="text-2xl border-b-2 border-b-primary pb-10 w-full border-opacity-[30%] flex items-end gap-x-3">
+        Showing results for{" "}
+        <input
+          defaultValue={searchParams.get("query") || undefined}
+          placeholder="Search..."
+          className="p-1 bg-transparent outline-none border-b border-b-front text-lg translate-y-[2px] duration-300 focus:border-primary"
+          onChange={(event) => {
+            setSearchParams((p) => {
+              return { ...p, query: event.target.value };
+            });
+          }}
+        />
       </div>
       <div className="flex flex-wrap gap-y-6 mt-12 justify-between">
         {dummy.map((item) => (
@@ -66,7 +81,7 @@ export default function SearchPage() {
                 />
               </div>
               <div className="flex flex-col pt-4">
-                <div className="text-xl font-bold">{item.name}</div>
+                <div className="text-xl font-bold font-inter">{item.name}</div>
                 <div className="text-sm">{item.owner}</div>
               </div>
             </div>
