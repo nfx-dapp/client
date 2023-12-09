@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navItems = [
   { title: "Home", to: "/" },
-  { title: "Explore", to: "/explore" },
+  { title: "Explore", to: "/search" },
   { title: "Projects", to: "/projects" },
   { title: "Mantle", to: "https://www.mantle.xyz", target: "__blank" },
 ];

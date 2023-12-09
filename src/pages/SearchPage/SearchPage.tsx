@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Icon from "../../common/Icon";
 import { useEffect, useState } from "react";
 import Dropdown from "../../common/Dropdown";
@@ -13,48 +13,56 @@ export default function SearchPage() {
       imageUrl:
         "https://www.thestreet.com/.image/t_share/MTgyMDU5NDcwMTc4NzU1NzE1/boredape1.jpg",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "safed badar",
       imageUrl:
         "https://www.thestreet.com/.image/t_share/MTgzNTYwNDE0NDE0NTEzMTkw/screen-shot-2021-09-01-at-85022-am.png",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "laal bandar",
       imageUrl:
         "https://peerthroughmedia.com/wp-content/uploads/2021/07/APe-270.png",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "Hara bandr",
       imageUrl:
         "https://i.guim.co.uk/img/media/b8a75934f827bdaf02a3814d1669c8da19886881/0_727_3500_2100/master/3500.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=1ad9e12c908d182c891b03abc19988f4",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "satrangi bandar",
       imageUrl:
         "https://imageio.forbes.com/specials-images/imageserve/62718213cebc45973202159e/Screen-Shot-2022-05-03-at-3-26-59-PM/0x0.png?format=png&width=960",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "safed badar",
       imageUrl:
         "https://www.simondickinson.com/wp-content/uploads/2022/03/61e0b084c4b3c.webp",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "laal bandar",
       imageUrl:
         "https://miro.medium.com/v2/resize:fit:512/1*sBdInW9e1CvR78NksycB2Q.png",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
     {
       name: "satrangi bandar",
       imageUrl:
         "https://cdn.vox-cdn.com/thumbor/v8AaxsIiLidtj26Ld_XwdyEJCpo=/155x65:995x648/2000x1333/filters:focal(583x448:584x449)/cdn.vox-cdn.com/uploads/chorus_asset/file/23084330/bored_ape_nft_accidental_.jpg",
       project: "Vo toh me hu",
+      address: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
     },
   ];
 
@@ -120,7 +128,8 @@ export default function SearchPage() {
             </span>
           ) : (
             filtered.map((item, key) => (
-              <div
+              <Link
+                to={`/contracts/${item.address}`}
                 key={key}
                 className="relative flex flex-row justify-between hover:bg-white hover:bg-opacity-10 rounded-xl hover:cursor-pointer ease-in duration-300 hover:border-opacity-100 border hover:border-primary border-opacity-0 border-white p-[0.2rem] w-[49%] group"
               >
@@ -155,7 +164,7 @@ export default function SearchPage() {
                 <div className="absolute top-3 right-3 text-xl text-primary duration-inherit opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <Icon icon="open_in_new" className="animate-pulse" />
                 </div>
-              </div>
+              </Link>
             ))
           )}
         </div>
