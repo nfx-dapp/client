@@ -32,7 +32,7 @@ export default function Navbar() {
             <img
               src="/logo.svg"
               alt="NFX logo"
-              className="aspect-square h-16 duration-inherit group-hover:-scale-y-100"
+              className="aspect-square h-16 duration-inherit group-hover:-scale-100"
             />
           </Link>
         </div>
@@ -56,7 +56,9 @@ export default function Navbar() {
               >
                 {item.title}
               </NavLink>
-              .
+              <figure className="font-black selection:hidden selection:bg-opacity-0 selection:text-primary">
+                .
+              </figure>
               {/* <MaterialIcon className="text-xs scale-5  0" codepoint="e3fa" /> */}
             </div>
           ))}

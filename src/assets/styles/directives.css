@@ -4,17 +4,21 @@
   initial-value: #c0ffee;
 }
 
-@keyframes demo-live-icon {
+@keyframes flip-x-anim {
   from {
-    opacity: 100%;
-    scale: 100%;
+    transform: rotateX(0);
   }
-  40% {
+
+  99% {
+    transform: rotateX(180deg);
+  }
+
+  99.1% {
     opacity: 0;
-    scale: 250%;
   }
+
   to {
-    opacity: 0;
-    scale: 200%;
+    opacity: 1;
+    transform: rotateX(0);
   }
 }

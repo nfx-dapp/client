@@ -38,12 +38,14 @@ export default function Hero() {
                 className="flex flex-col py-3 gap-y-2 pr-16"
                 onSubmit={(data) => {}}
               >
-                <div className="relative">
+                <div className="relative rounded-md overflow-hidden">
                   <DataForm.Input
                     name="query"
-                    className="bg-transparent border-back border py-1 px-2 rounded-md text-lg placeholder:text-back placeholder:text-opacity-80 placeholder:text-base w-full"
+                    className="bg-transparent border-back border py-1 px-2 rounded-inherit text-lg placeholder:text-back placeholder:text-opacity-80 placeholder:text-base w-full"
                     placeholder="Enter NFT Name, ID or contract Address to search"
                   />
+
+                  <div className="absolute-cover bg-primary rounded-inherit bg-opacity-50 opacity-40 backdrop-blur-sm animate-pulse pointer-events-none" />
 
                   <button>
                     <Icon
@@ -65,7 +67,10 @@ export default function Hero() {
               </h3>
 
               <div className="flex">
-                <button className="bg-background text-front px-8 py-4 mt-5 rounded-full text-sm font-medium tracking-tight overflow-hidden relative after:absolure-cover">
+                <button
+                  className="bg-background text-front px-8 py-4 mt-5 rounded-full text-sm font-medium tracking-tight overflow-hidden relative after:absolute-cover after:bg-secondary
+                after:bg-opacity-0 after:duration-300 hover:after:bg-opacity-20"
+                >
                   Support your NFT
                 </button>
               </div>

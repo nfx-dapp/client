@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-background text-front font-poppins scroll-smooth selection:bg-secondary selection:bg-opacity-80 selection:bg-blend-difference;
+    @apply bg-background text-front font-poppins scroll-smooth selection:bg-secondary selection:text-back selection:bg-opacity-80 scrollbar-primary;
   }
 
   body {
@@ -19,6 +19,14 @@
     -webkit-user-select: none;
     -ms-user-select: none;
   }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
 }
 
 @layer utilities {
@@ -32,6 +40,10 @@
 
   .heading {
     @apply font-lato text-3xl font-semibold;
+  }
+
+  .white {
+    @apply brightness-0 invert;
   }
 }
 
