@@ -43,7 +43,7 @@ function BasicInfo(props: {
   }
 
   return (
-    <section className="h-screen p-page pt-[18vh]">
+    <section className="h-screen p-page pt-[18vh] mb-[6vh]">
       <h2 className="text-transparent bg-gradient-to-r from-front via-primary to-secondary bg-clip-text">
         <span className="text-3xl font-light">Adding as</span>
         <span className="pl-4">
