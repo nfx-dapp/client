@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import DataForm from "../../../common/DataForm";
 import Icon from "../../../common/Icon";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const videoRef = useRef() as React.MutableRefObject<HTMLVideoElement>;
@@ -67,12 +68,13 @@ export default function Hero() {
               </h3>
 
               <div className="flex">
-                <button
+                <Link
+                  to="/add-nft"
                   className="bg-background text-front px-8 py-4 mt-5 rounded-full text-sm font-medium tracking-tight overflow-hidden relative after:absolute-cover after:bg-secondary
                 after:bg-opacity-0 after:duration-300 hover:after:bg-opacity-20"
                 >
                   Support your NFT
-                </button>
+                </Link>
               </div>
             </div>
           </div>

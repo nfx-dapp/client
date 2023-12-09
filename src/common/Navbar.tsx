@@ -5,8 +5,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 const navItems = [
   { title: "Home", to: "/" },
   { title: "App", to: "/app" },
-  { title: "Contact", to: "/contact" },
   { title: "About", to: "/about" },
+  { title: "Mantle", to: "https://www.mantle.xyz", target: "__blank" },
 ];
 
 export default function Navbar() {
@@ -41,6 +41,7 @@ export default function Navbar() {
           {navItems.map((item, i) => (
             <div className="flex gap-x-6 items-center" key={i}>
               <NavLink
+                target={item.target}
                 to={item.to}
                 className={({ isActive }) =>
                   twMerge(
@@ -56,15 +57,14 @@ export default function Navbar() {
               >
                 {item.title}
               </NavLink>
-              <figure className="font-black selection:hidden selection:bg-opacity-0 selection:text-primary">
-                .
-              </figure>
+              {i !== navItems.length - 1 && (
+                <figure className="font-black selection:hidden selection:bg-opacity-0 selection:text-primary">
+                  .
+                </figure>
+              )}
               {/* <MaterialIcon className="text-xs scale-5  0" codepoint="e3fa" /> */}
             </div>
           ))}
-          <Link to="https://www.flow.com" target="__blank" rel="noreferrer">
-            Flow
-          </Link>
         </div>
 
         <div
@@ -75,7 +75,7 @@ export default function Navbar() {
           )}
         >
           <Link
-            to="/auth"
+            to="/add-nft"
             className="bg-primary text-back px-6 py-2 rounded-full bg-grid shadow-[inset_5px_4px_1rem_#ffffff77,0px_0px_6px_#ffffff66] duration-300 hover:bg-right-bottom hover:scale-110"
           >
             Start Developing

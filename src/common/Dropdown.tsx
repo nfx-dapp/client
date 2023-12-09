@@ -44,7 +44,7 @@ function Container(props: ContainerProps) {
         onClick={() => setOpen(!open)}
         type="button"
         className={twMerge(
-          "flex items-center justify-center duration-inherit",
+          "flex items-center relative justify-center duration-inherit",
           props.className
         )}
       >
@@ -52,15 +52,16 @@ function Container(props: ContainerProps) {
         <Icon
           icon="expand_more"
           className={twMerge(
-            "pt-[3px] ml-2 scale-150 duration-300",
+            "pt-[3px] scale-150 absolute right-3 top-1/2 -translate-y-1/2 duration-300",
             open && "rotate-180"
           )}
         />
+        <Icon icon="expand_more" className="opacity-0 ml-2" />
       </button>
       <>
         <div
           className={twMerge(
-            "flex flex-col left-1/2 -translate-x-1/2 z-10 duration-300 absolute top-full"
+            "flex flex-col left-1/2 -translate-x-1/2 z-10 duration-300 w-full absolute top-full"
           )}
           style={{
             clipPath: !open
@@ -92,7 +93,11 @@ interface OptionProps {
 function Option(props: OptionProps) {
   return (
     <button
-      className={twMerge("", props.className, props.isSelected && "bg-primary")}
+      className={twMerge(
+        "",
+        props.className,
+        props.isSelected && "bg-secondary text-back bg-opacity-100 font-medium"
+      )}
       type="button"
       onClick={props.onClick}
     >
