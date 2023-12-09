@@ -1,15 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import {
-  SchemaController,
-  checkValidDefinition,
-} from "../../../utils/schemaValidation";
-import { equateObjects, purifyJson } from "../../../utils";
+import { checkValidDefinition } from "../../../utils/schemaValidation";
+import { purifyJson } from "../../../utils";
 import { twMerge } from "tailwind-merge";
 import Editor from "@monaco-editor/react";
-import { Definition } from "../../../types/Data";
 
-export default function SchemaDescription() {
+export default function SchemaDescription(props: {
+  nextEvent: (data: { schema: string }) => void;
+}) {
   const [schema, setSchema] = useState<string>();
 
   const [result, setResult] = useState({ valid: false, message: "" });
@@ -73,9 +70,9 @@ export default function SchemaDescription() {
             <div className="py-5 flex justify-center">
               <div className="relative">
                 <button
-                  className="btn-3 px-9 py-3 rounded-lg disabled:opacity-50 disabled:pointer-events-none"
+                  className="btn-3 px-6 py-2 rounded-lg bg-green-400 text-black disabled:opacity-50 disabled:pointer-events-none"
                   disabled={!result.valid}
-                  //   onClick={updateSchema}
+                  onClick={() => props.nextEvent({ schema: schema || "[]" })}
                 >
                   Next
                 </button>
