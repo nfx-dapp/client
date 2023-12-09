@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
 import DataForm from "../../../common/DataForm";
 import Icon from "../../../common/Icon";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const videoRef = useRef() as React.MutableRefObject<HTMLVideoElement>;
+
+  const navigate = useNavigate();
 
   return (
     <section className="h-screen py-[12vh] p-page relative">
@@ -37,7 +39,9 @@ export default function Hero() {
             <div className="basis-1/2">
               <DataForm.Container
                 className="flex flex-col py-3 gap-y-2 pr-16"
-                onSubmit={(data) => {}}
+                onSubmit={(data) => {
+                  navigate(`/search?query=${data.query}`);
+                }}
               >
                 <div className="relative rounded-md overflow-hidden">
                   <DataForm.Input
@@ -48,7 +52,7 @@ export default function Hero() {
 
                   <div className="absolute-cover bg-primary rounded-inherit bg-opacity-50 opacity-40 backdrop-blur-sm animate-pulse pointer-events-none" />
 
-                  <button>
+                  <button type="submit">
                     <Icon
                       icon="search"
                       className="absolute right-3 top-1/2 -translate-y-1/2 text-xl"
