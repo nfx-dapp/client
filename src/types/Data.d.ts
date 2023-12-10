@@ -42,3 +42,22 @@ interface ABIEntry {
 }
 
 type ABI = ABIEntry[];
+
+interface NFTcontract {
+  project: { slug: string };
+  name: string;
+  address: `0x${string}`;
+  metadata: { schemaString: string };
+  functions: {
+    name: { nfx: string; legacy: string };
+    description: string;
+    outputs: { name: { nfx: string; legacy: string }; type: string }[];
+  }[];
+}
+
+interface Project {
+  slug: string;
+  name: string;
+  description: string;
+  owner: string;
+}

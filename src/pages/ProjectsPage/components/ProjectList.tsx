@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ProjectList() {
   const dummy = [
     {
@@ -5,8 +7,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf34djfjsdfnk3jedsf",
       imageUrl:
         "https://analyticsindiamag.com/wp-content/uploads/2022/01/NFT-AR_11zon.jpg",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -15,8 +16,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf343jedsf",
       imageUrl:
         "https://www.albawaba.com/sites/default/files/styles/d08_standard/public/2022-06/shutterstock_2050346153.jpg?h=82f92a78&itok=qcPksB-N",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -25,8 +25,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf343jedsf",
       imageUrl:
         "https://images.squarespace-cdn.com/content/v1/51d98be2e4b05a25fc200cbc/1625169463002-6P2VG9DJQ85XJ2M0QU1C/NFT12.png?format=750w",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -35,8 +34,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf343jedsf",
       imageUrl:
         "https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1651729920.webp",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -45,8 +43,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf343jedsf",
       imageUrl:
         "https://static.designboom.com/wp-content/uploads/2022/05/strozzi-nft-db-500.jpg",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -55,8 +52,7 @@ export default function ProjectList() {
       owner: "3nzxjkszxcf343jedsf",
       imageUrl:
         "https://dxagroup.io/wp-content/uploads/Blog/NFTArtValuationin2023AGuidetoPricing/dxa-group-nft-art-valuation-a-guide-to-pricing-banner-1.webp",
-      updatedAt: "7/12/22",
-      createdAt: "6/11/22",
+
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, magni.",
     },
@@ -66,7 +62,10 @@ export default function ProjectList() {
     <section className="p-page pt-[12vh] min-h-screen mt-[3.8vh] mb-[6vh]">
       <div className="flex flex-wrap justify-between gap-y-28">
         {dummy.map((item) => (
-          <div className="w-[30%] rounded-xl h-[30vh] flex flex-col items-center relative hover:cursor-pointer p-1 border border-primary group">
+          <Link
+            to={`/contracts/${item.name}`}
+            className="w-[30%] rounded-xl h-[30vh] flex flex-col items-center relative hover:cursor-pointer p-1 border border-primary group"
+          >
             <img
               src={item.imageUrl}
               alt={item.name}
@@ -83,7 +82,7 @@ export default function ProjectList() {
               </div>
               <div className="truncate">{item.description}</div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
