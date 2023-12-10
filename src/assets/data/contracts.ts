@@ -27,7 +27,7 @@ let contracts = [
   },
 
   {
-    name: "Foundation Rooms",
+    name: "Street View",
     description:
       "An exclusive collection of NFTs representing unique virtual spaces.",
     address: "0x2977bdBbB9F78Ef6D3E8B018ED3bCCEc3E04C0f8",
