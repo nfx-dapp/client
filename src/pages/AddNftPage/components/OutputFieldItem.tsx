@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "../../../common/Icon";
 import { twMerge } from "tailwind-merge";
-import { ABIEntry } from "../../../types/Data";
+import { ABIEntry } from "../../../types";
 
 interface OutputFieldItemProps {
   field: ABIEntry;

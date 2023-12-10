@@ -26,12 +26,12 @@ export type Definition = {
 
 export type Type = "string" | "number" | "reference" | Definition;
 
-interface ABIParameter {
+export interface ABIParameter {
   name: string;
   type: string;
 }
 
-interface ABIEntry {
+export interface ABIEntry {
   constant?: boolean;
   inputs: ABIParameter[];
   name: string;
@@ -41,9 +41,9 @@ interface ABIEntry {
   type: string;
 }
 
-type ABI = ABIEntry[];
+export type ABI = ABIEntry[];
 
-interface NFTcontract {
+export interface NFTcontract {
   project: { slug: string };
   name: string;
   address: `0x${string}`;
@@ -55,7 +55,7 @@ interface NFTcontract {
   }[];
 }
 
-interface Project {
+export interface Project {
   slug: string;
   name: string;
   description: string;
