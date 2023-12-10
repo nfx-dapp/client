@@ -4,23 +4,21 @@ export default function Footer() {
   const dummy = [
     {
       title: "Developers",
-      items: ["Item1", "Item2 sd", "text dfn", "okay man"],
-    },
-    {
-      title: "More items",
-      items: [
-        "Item1",
-        "Item2 sd",
-        "text dfn",
-        "okay man",
-        "dsjkdn",
-        "make snes",
-        "i eman thsd's ",
-      ],
+      items: ["Get Involved", "Docs", "Github", "Brand", "Careers"],
     },
     {
       title: "Community",
-      items: ["Item1", "lorem suing", "text dfn", "okay man", "dskdsf"],
+      items: [
+        "Discord",
+        "Twitter",
+        "Blog",
+        "Facebook",
+        "Youtube"
+      ],
+    },
+    {
+      title: "Legal",
+      items: ["Privacy", "Terms of Condition"],
     },
   ];
 

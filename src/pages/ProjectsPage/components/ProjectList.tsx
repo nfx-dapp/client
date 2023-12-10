@@ -63,7 +63,7 @@ export default function ProjectList() {
       <div className="flex flex-wrap justify-between gap-y-28">
         {dummy.map((item) => (
           <Link
-            to={`/contracts/${item.name}`}
+            to={`/project/${item.name}`}
             className="w-[30%] rounded-xl h-[30vh] flex flex-col items-center relative hover:cursor-pointer p-1 border border-primary group"
           >
             <img
