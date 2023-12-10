@@ -1,55 +1,11 @@
 import React from "react";
 import { useParams } from "react-router";
+import contracts from "../../assets/data/contracts";
 
 export default function ContractPage() {
-  const { id } = useParams();
+  const { address } = useParams();
 
-  const dummy = {
-    name: "DayDream Land",
-    address: "0xaldsjnadsasdasdsad",
-    description:
-      "While experts agree that the future of NFTs won't resemble the bull run of 2021, some speak about the potential revival of the market in 2024. This positive outlook stems from utility and value-driven projects, creative collaborations, and demand for real world applications.",
-    metadata: {
-      schema: [
-        {
-          name: "Unlock Unix",
-          type: "number",
-        },
-      ],
-    },
-    imageUrl:
-      "https://www.itsliquid.com/wp-content/uploads/2022/01/thenewfuture_nftworld_16.jpg",
-    functions: [
-      {
-        name: "getAddress",
-        description: "This function is for Getting address of the Project",
-        outputs: [
-          {
-            name: { nfx: "Get address", legacy: "getAddress" },
-            type: 12423,
-          },
-          {
-            name: { nfx: "New address", legacy: "getAddress" },
-            type: "1242dff3",
-          },
-        ],
-      },
-      {
-        name: "getAddress",
-        description: "This function is for Getting address of the Project",
-        outputs: [
-          {
-            name: { nfx: "Get address", legacy: "getAddress" },
-            type: 12423,
-          },
-          {
-            name: { nfx: "New address", legacy: "getAddress" },
-            type: "1242dff3",
-          },
-        ],
-      },
-    ],
-  };
+  const dummy = contracts.filter((c) => c.address === address)[0];
 
   return (
     <div className="py-[16vh] flex flex-col w-full">
@@ -83,10 +39,11 @@ export default function ContractPage() {
             <div className="flex flex-col gap-y-2 bg-white rounded-xl bg-opacity-10 px-6 py-8 hover:bg-opacity-[15%] ease-in duration-300">
               <div>
                 Function Name :{" "}
-                <span className="text-primary">{functions.name}</span>
-                <div className="text-sm font-extralight mt-2">{functions.description}</div>
-                  <div className="mt-4 mb-2">Output</div>
-               
+                <span className="text-primary">{functions.name.nfx}</span>
+                <div className="text-sm font-extralight mt-2">
+                  {functions.description}
+                </div>
+                <div className="mt-4 mb-2">Output</div>
                 <div className="flex flex-row gap-x-8">
                   {functions.outputs.map((output) => (
                     <div className="flex flex-col gap-y-2 bg-opacity-20 rounded-xl bg-primary p-4">
