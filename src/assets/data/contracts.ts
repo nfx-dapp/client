@@ -25,6 +25,38 @@ let contracts = [
       },
     ],
   },
+
+  {
+    name: "Foundation Rooms",
+    description:
+      "An exclusive collection of NFTs representing unique virtual spaces.",
+    address: "0x2977bdBbB9F78Ef6D3E8B018ED3bCCEc3E04C0f8",
+    imageUrl: "/images/contracts/Street-View.png",
+    project: "Blurry View",
+    functions: [
+      {
+        name: { legacy: "getOwner", nfx: "getOwnerNFX" },
+        description: "Retrieve the owner of a specific virtual space.",
+        outputs: [
+          { name: { legacy: "owner", nfx: "ownerNFX" }, type: "address" },
+          {
+            name: { legacy: "timestamp", nfx: "timestampNFX" },
+            type: "uint256",
+          },
+        ],
+      },
+      {
+        name: { legacy: "getSpaceName", nfx: "getSpaceNameNFX" },
+        description: "Get the name of a specific virtual space.",
+        outputs: [
+          {
+            name: { legacy: "spaceName", nfx: "spaceNameNFX" },
+            type: "string",
+          },
+        ],
+      },
+    ],
+  },
   {
     name: "Foundation Rooms",
     description:
