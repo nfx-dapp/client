@@ -26,7 +26,7 @@ export const ProjectPage = () => {
           Contracts
         </div>
         {/* <div className="w-full h-[4vh] top-4 bg-primary border-t border-b border-b-primary border-t-primary -z-1 bg-opacity-40 -mt-8" /> */}
-        <div className="mt-12 flex flex-wrap justify-between p-page">
+        <div className="mt-12 flex flex-wrap justify-between p-page w-full">
           {pcontracts.map((contract) => (
             <div className="flex flex-col w-[30%] rounded-lg overflow-hidden gap-y-4 bg-primary bg-opacity-[10%] border-primary border p-2">
               <img
