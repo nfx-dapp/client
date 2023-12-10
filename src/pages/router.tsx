@@ -10,6 +10,7 @@ import AddNftPage from "./AddNftPage/AddNftPage";
 import SearchPage from "./SearchPage/SearchPage";
 import ProjectsPage from "./ProjectsPage/ProjectsPage";
 import ContractPage from "./ContractPage/ContractPage";
+import { ProjectPage } from "./ProjectPage/ProjectPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +19,8 @@ const router = createBrowserRouter(
       <Route path="/add-nft" element={<AddNftPage />} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
-       <Route path="/contracts/:id" element={<ContractPage />} />
+      <Route path="/contracts/:id" element={<ContractPage />} />
+      <Route path="/project/:id" element={<ProjectPage />} />
 
        <Route path="*" element={<ErrorPage />} />
     </Route>

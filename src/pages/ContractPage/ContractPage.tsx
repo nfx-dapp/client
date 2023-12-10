@@ -57,7 +57,7 @@ export default function ContractPage() {
         <img
           src={dummy.imageUrl}
           alt={dummy.name}
-          className="w-[45%] rounded-xl p-2 border-primary border"
+          className="w-[45%] rounded-xl p-2 border-primary border shadow-[rgba(85,_231,_148,_0.4)_0px_0px_30px]"
         />
         <div className="flex flex-col">
           <div className="text-[4rem] tracking-wide font-semibold">
