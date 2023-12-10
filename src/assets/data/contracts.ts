@@ -31,6 +31,7 @@ let contracts = [
       "An exclusive collection of NFTs representing unique virtual spaces.",
     address: "0x29B018ED3bCCEc377bdBbB9F78Ef6D3E8E04C0f8",
     imageUrl: "/images/contracts/foundation-rooms.webp",
+    project: "Blurry View",
     functions: [
       {
         name: { legacy: "getOwner", nfx: "getOwnerNFX" },
@@ -89,6 +90,7 @@ let contracts = [
       "Exploring futuristic concepts through unique NFT representations.",
     address: "0x8a85c66Dd1eD7ecF4B82Fe6cEeC74b2D999dBDc2",
     imageUrl: "/images/contracts/futureZ.avif",
+    project: "Blow Brain",
     functions: [
       {
         name: { legacy: "getCreator", nfx: "getCreatorNFX" },
@@ -116,6 +118,7 @@ let contracts = [
       "NFTs representing historical and mythical crests from diverse cultures.",
     address: "0xD8dA6BF26964Af9D7eEd9e03E53415D37aA96045",
     imageUrl: "/images/contracts/holy-crest.gif",
+    project: "Distorted Face",
     functions: [
       {
         name: { legacy: "getOwner", nfx: "getOwnerNFX" },
@@ -143,6 +146,7 @@ let contracts = [
       "A dynamic collection of NFTs inspired by the energy and excitement of sports.",
     address: "0x7e3b9b9c161dDD481844C46eB78851B8EbA19Ac7",
     imageUrl: "/images/contracts/redbullzzz.jpg",
+    project: "Richie Cat",
     functions: [
       {
         name: { legacy: "getOwner", nfx: "getOwnerNFX" },
@@ -170,6 +174,7 @@ let contracts = [
       "A journey through the digital realm with unique NFTs representing virtual landscapes.",
     address: "0xCe67cE6E5CdA31F31Ad01f9d7B9A4cbe4C371d06",
     imageUrl: "/images/contracts/digital-odyssey.avif",
+    project: "Glasses Guy",
     functions: [
       {
         name: { legacy: "getExplorer", nfx: "getExplorerNFX" },
@@ -198,6 +203,7 @@ let contracts = [
       "NFTs blending technology and art, showcasing futuristic and innovative concepts.",
     address: "0x9f7a3E2f3Ef0FfC5eAAc6B82f87C46E64Ea69F57",
     imageUrl: "/images/contracts/techart.webp",
+    project: "Blurry View",
     functions: [
       {
         name: { legacy: "getArtist", nfx: "getArtistNFX" },
@@ -229,6 +235,7 @@ let contracts = [
       "NFTs representing virtual parks where crypto enthusiasts gather and interact.",
     address: "0xA4fF82383c46D19b9C1c965fEf1bdaA99E82AcC7",
     imageUrl: "/images/contracts/nft-park.png",
+    project: "Glasses Guy",
     functions: [
       {
         name: { legacy: "getVisitor", nfx: "getVisitorNFX" },
